@@ -30,5 +30,19 @@ namespace FormsUI
             people = db.GetPeople(lastNameText.Text);
             UpdateBinding();
         }
+
+        private void insertButton_Click(object sender, EventArgs e)
+        {
+            DataAccess db = new DataAccess();
+            db.insertPerson(firstInsertNameText.Text,
+                            lastNameInsertText.Text,
+                            emailInsertText.Text,
+                            mobileInsertText.Text);
+
+            firstInsertNameText.Text = "";
+            lastNameInsertText.Text = "";
+            emailInsertText.Text = "";
+            mobileInsertText.Text = "";
+        }
     }
 }
